@@ -1,0 +1,136 @@
+$udriven-good-100: #cff6eb;
+$udriven-good-200: #40E2B4;
+$udriven-good-300: #38B290;
+$udriven-good-400: #397967;
+
+$udriven-warning-100: #fbf1cd;
+$udriven-warning-200: #f8ac1a;
+$udriven-warning-300: #BC800D;
+$udriven-warning-400: #8F6108;
+
+$udriven-error-100: #ffe4dc;
+$udriven-error-200: #ff3d00;
+$udriven-error-300: #b02a00;
+$udriven-error-400: #872100;
+
+$udriven-unknown-100: #dbdbdb;
+$udriven-unknown-200: #737373;
+$udriven-unknown-300: #555459;
+$udriven-unknown-400: #3d3c40;
+
+$udriven-oob-100: #d4f0f9;
+$udriven-oob-200: #6ebbd2;
+
+$udriven-iob-100: #6D9ADB;
+$udriven-iob-200: #1863d2;
+
+$udriven-ignore-100: #9da2c1;
+$udriven-ignore-200: #6a6f8c;
+
+$good-colors: (
+        100:$udriven-good-100,
+        200:$udriven-good-200,
+        300:$udriven-good-300,
+        400:$udriven-good-400,
+);
+$warning-colors: (
+        100:$udriven-warning-100,
+        200:$udriven-warning-200,
+        300:$udriven-warning-300,
+        400:$udriven-warning-400,
+);
+$error-colors: (
+        100:$udriven-error-100,
+        200:$udriven-error-200,
+        300:$udriven-error-300,
+        400:$udriven-error-400,
+);
+$unknown-colors: (
+        100:$udriven-unknown-100,
+        200:$udriven-unknown-200,
+        300:$udriven-unknown-300,
+        400:$udriven-unknown-400,
+);
+$oob-colors: (
+        100:$udriven-oob-100,
+        200:$udriven-oob-200,
+);
+$ignore-colors: (
+        100:$udriven-ignore-100,
+        200:$udriven-ignore-200,
+);
+
+
+//dark
+$udriven-dark-good-100: #397967;
+$udriven-dark-good-200: #27C499;
+$udriven-dark-good-300: #49B699;
+$udriven-dark-good-400: #D4F0F9;
+
+$udriven-dark-warning-100: #655946;
+$udriven-dark-warning-200: #ff8c21;
+$udriven-dark-warning-300: #FA9C54;
+$udriven-dark-warning-400: #ffa763;
+
+$udriven-dark-error-100: #6a483f;
+$udriven-dark-error-200: #ff454b;
+$udriven-dark-error-300: #f67361;
+$udriven-dark-error-400: #e68e82;
+
+$udriven-dark-unknown-100: #585763;
+$udriven-dark-unknown-200: #747286;
+$udriven-dark-unknown-300: #817F8E;
+$udriven-dark-unknown-400: #9999A5;
+
+$udriven-dark-primary-100: #626a6e;
+$udriven-dark-primary-200: #29bfed;
+$udriven-dark-primary-300: #29a2c6;
+$udriven-dark-primary-400: #247e9a;
+
+$udriven-dark-oob-100: #55585c;
+$udriven-dark-oob-200: #6ebbd2;
+
+$udriven-dark-iob-100: #6D9ADB;
+$udriven-dark-iob-200: #1863d2;
+
+$udriven-dark-ignore-100: #515c71;
+$udriven-dark-ignore-200: #8c9dBd;
+
+$dark-good-colors: (
+        100:$udriven-dark-good-100,
+        200:$udriven-dark-good-200,
+        300:$udriven-dark-good-300,
+        400:$udriven-dark-good-400,
+);
+$dark-warning-colors: (
+        100:$udriven-dark-warning-100,
+        200:$udriven-dark-warning-200,
+        300:$udriven-dark-warning-300,
+        400:$udriven-dark-warning-400,
+);
+$dark-error-colors: (
+        100:$udriven-dark-error-100,
+        200:$udriven-dark-error-200,
+        300:$udriven-dark-error-300,
+        400:$udriven-dark-error-400,
+);
+$dark-unknown-colors: (
+        100:$udriven-dark-unknown-100,
+        200:$udriven-dark-unknown-200,
+        300:$udriven-dark-unknown-300,
+        400:$udriven-dark-unknown-400,
+);
+$dark-primary-colors: (
+        100:$udriven-dark-primary-100,
+        200:$udriven-dark-primary-200,
+        300:$udriven-dark-primary-300,
+        400:$udriven-dark-primary-400,
+);
+$dark-ignore-colors: (
+        100:$udriven-dark-ignore-100,
+        200:$udriven-dark-ignore-200,
+);
+$dark-oob-colors: (
+        100:$udriven-dark-oob-100,
+        200:$udriven-dark-oob-200,
+);

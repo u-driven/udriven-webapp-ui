@@ -1,0 +1,88 @@
+@use "../functions/functions" as function;
+@import "colors/variables";
+@import "status/variables";
+@import "gradient/variables";
+@import "opacity/variables";
+// bg客製主題
+$bg-color: #EFEFEF;
+
+$bg-color-dark: #313033;
+
+
+@mixin generate-bg-colors($color-map, $color-name) {
+  @each $key, $color in $color-map {
+    .ud-bg-#{$color-name}-#{$key} {
+      --ud-bg-opacity: 1;
+      background-color: rgba(#{function.hex-to-rgb($color)}, var(--ud-bg-opacity)) !important;
+    }
+  }
+}
+
+:root {
+  /* Color level */
+  @include generate-bg-colors($gray-colors, 'gray');
+  @include generate-bg-colors($blue-colors, 'blue');
+  @include generate-bg-colors($deep-blue-colors, 'deep-blue');
+  /* Status */
+  @include generate-bg-colors($good-colors, 'good');
+  @include generate-bg-colors($warning-colors, 'warning');
+  @include generate-bg-colors($error-colors, 'error');
+  @include generate-bg-colors($unknown-colors, 'unknown');
+  @include generate-bg-colors($ignore-colors, 'ignore');
+  @include generate-bg-colors($oob-colors, 'am');
+  //@each $color-name, $color-value in $theme-colors-bg-total {
+  //  --ud-bg-color-#{$color-name}: #{$color-value};
+  //}
+  @include generate-bg-colors($gr-primary-colors, 'grblue');
+  @include generate-bg-colors($gr-teal-colors, 'grteal');
+  --ud-bg-color: #{$bg-color};
+}
+
+
+.ud-bg {
+  --ud-bg-opacity: 1;
+  background-color: rgba(#{function.hex-to-rgb($bg-color)}, var(--ud-bg-opacity)) !important;
+}
+
+/* 漸層 */
+@each $name, $value in $udriven-theme-linear {
+  .ud-bg-linear-#{$name} {
+    background: $value;
+  }
+}
+
+
+
+.dark {
+  /* Color level */
+  @include generate-bg-colors($dark-gray-colors, 'gray');
+  @include generate-bg-colors($dark-blue-colors, 'blue');
+  @include generate-bg-colors($dark-deep-blue-colors, 'deep-blue');
+  /* Status */
+  @include generate-bg-colors($dark-good-colors, 'good');
+  @include generate-bg-colors($dark-warning-colors, 'warning');
+  @include generate-bg-colors($dark-error-colors, 'error');
+  @include generate-bg-colors($dark-unknown-colors, 'unknown');
+  @include generate-bg-colors($dark-ignore-colors, 'ignore');
+  @include generate-bg-colors($dark-oob-colors, 'am');
+  --ud-bg-color: #{$bg-color-dark};
+
+  .ud-bg {
+    --ud-bg-opacity: 1;
+    background-color: rgba(#{function.hex-to-rgb($bg-color-dark)}, var(--ud-bg-opacity)) !important;
+  }
+
+  //漸層
+  @each $name, $value in $udriven-theme-linear-dark {
+    .ud-bg-linear-#{$name} {
+      background: $value
+    }
+  }
+}
+
+/* 透明度 */
+@each $name in $opacity {
+  .ud-bg-opacity-#{$name} {
+    --ud-bg-opacity: #{$name / 100} !important;
+  }
+}

@@ -1,0 +1,9 @@
+.el-drawer {
+  background-color: var(--ud-card-color-1);
+  > .in-drawer__header {
+    padding: 0;
+  }
+  > .in-drawer__body {
+    padding: 0;
+  }
+}

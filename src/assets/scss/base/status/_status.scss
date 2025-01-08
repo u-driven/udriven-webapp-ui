@@ -1,0 +1,34 @@
+@use "../../functions/functions" as function;
+@import "variables";
+@mixin generate-colors($color-map, $color-name) {
+  @each $key, $color in $color-map {
+    --ud-color-#{$color-name}-#{$key}: #{$color};
+    --ud-color-#{$color-name}-#{$key}-rgb: #{function.hex-to-rgb($color)};
+  }
+  --#{$color-name}-scale-length: #{function.custom-map($color-map)};
+}
+
+
+:root {
+  color-scheme: light;
+  @include generate-colors($good-colors, 'good');
+  @include generate-colors($warning-colors, 'warning');
+  @include generate-colors($error-colors, 'error');
+  @include generate-colors($unknown-colors, 'unknown');
+  @include generate-colors($ignore-colors, 'ignore');
+  @include generate-colors($oob-colors, 'am');
+
+  /* 手動!! generate-colors($gray, 'gray') 'gray填入' */
+  --type-scale: gray, blue, deep-blue, good, warning,error,unknown,primary,oob;
+  // ... 其他颜色的包含 ...
+}
+
+.dark {
+  color-scheme: light;
+  @include generate-colors($dark-good-colors, 'good');
+  @include generate-colors($dark-warning-colors, 'warning');
+  @include generate-colors($dark-error-colors, 'error');
+  @include generate-colors($dark-unknown-colors, 'unknown');
+  @include generate-colors($dark-ignore-colors, 'ignore');
+  @include generate-colors($dark-oob-colors, 'am');
+}

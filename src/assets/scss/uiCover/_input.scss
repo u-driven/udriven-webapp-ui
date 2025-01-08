@@ -1,0 +1,25 @@
+.el-input{
+  --el-disabled-bg-color: var(--ud-card-color-2);
+  --el-disabled-border-color: var(--ud-text-color-placeholder);
+  --el-input-bg-color: var(--ud-card-color-2);
+  --el-input-text-color: var(--ud-text-color-1);
+}
+.el-input-group__append, .el-input-group__prepend {
+  background: transparent ;
+}
+.el-input__wrapper {
+  width: 100%;
+  background-color: var(--ud-card-color-2);
+}
+
+.el-input{
+  transition: none !important;
+  border-radius: 4px;
+  &.is-disabled .el-input__inner{
+    color: var(--ud-text-color-2);
+
+  }
+}
+.el-input__suffix, .el-input__prefix{
+  color: var(--ud-input-icon-color);
+}

@@ -1,0 +1,33 @@
+.ud-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+  &.status-small {
+    width: 6px;
+    height: 6px;
+  }
+  &.status-good{
+    background-color: var(--ud-color-good-200);
+  }
+  &.status-error{
+    background-color: var(--ud-color-error-200);
+  }
+  &.status-warning{
+    background-color: var(--ud-color-warning-200);
+  }
+  &.status-unknown{
+    background-color: var(--ud-color-unknown-200);
+  }
+  //&.status-oob{
+  //  background-color: var(--ud-color-oob);
+  //}
+  //&.status-iob{
+  //  background-color: var(--ud-color-iob);
+  //}
+  //&.status-am{
+  //  background-color: var(--ud-color-am);
+  //}
+}
+

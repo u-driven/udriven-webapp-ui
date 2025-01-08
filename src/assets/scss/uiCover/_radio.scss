@@ -1,0 +1,10 @@
+.el-radio__inner{
+  background-color: transparent;
+  border: 1px solid var(--ud-line-color-1);
+}
+.el-radio{
+  color:var(--ud-text-color-1);
+  &.is-bordered{
+    border: 1px solid var(--ud-line-color-1);
+  }
+}

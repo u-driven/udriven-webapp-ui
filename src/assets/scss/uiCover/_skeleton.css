@@ -1,0 +1,4 @@
+.dark .el-skeleton.is-animated .el-skeleton__item{
+    --el-skeleton-color: var(--ud-color-gray-200);
+    --el-skeleton-to-color: var(--ud-color-gray-300);
+}

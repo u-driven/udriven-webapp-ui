@@ -1,0 +1,37 @@
+//$radius-total: 10;
+$radius-total: (
+        "3x":4,
+        "2xs":6,
+        "xs":8,
+        "sm":12,
+        "md":16,
+        "lg":20,
+        "xl":24,
+        "2xl":28,
+        "3xl":32,
+        "4xl":36
+);
+$radius-level: 4px;
+@function calc-border-radius($index) {
+  // 计算 border-radius
+  @return $index * $radius-level;
+}
+
+//@for $i from 1 through $radius-total {
+//  .ud-rounded-#{$i} {
+//    border-radius: calc-border-radius($i);
+//  }
+//}
+@each $key, $value in $radius-total{
+  .ud-rounded-#{$key} {
+        border-radius: $value * 1px !important;
+      }
+}
+
+.ud-rounded-pill{
+  border-radius: 100px;
+}
+.ud-rounded-circle{
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}

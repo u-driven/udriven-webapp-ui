@@ -1,0 +1,14 @@
+$udriven-theme-linear: (
+        "primary":  linear-gradient(260deg, #72D5F3 18.04%, #29BFED 76.82%),
+        "good":  linear-gradient(132deg, #40E2B4 11.64%, #7AEBCB 104.82%),
+        "warning":  linear-gradient(90deg, #EFAC2A 0%, #EBDB20 100%),
+        "error":  linear-gradient(90deg, #FF3D00 -3.61%, #F68E42 179.9%),
+        "unknow":   linear-gradient(90deg, #737373 0%, #9E9E9E 100%),
+) !default;
+$udriven-theme-linear-dark: (
+        "primary": linear-gradient(110deg, #29BFED 15.25%, #2098BD 97.86%),
+        "good":  linear-gradient(259deg, #27C499 6.87%, #6ED2B6 95.25%),
+        "warning":  linear-gradient(259deg, #FF8C21 6.87%, #FF8C21 6.88%, #EE9F57 95.25%),
+        "error":  linear-gradient(267deg, #FF454C 5.34%, #F67361 98.89%),
+        "unknow":  linear-gradient(270deg, #747286 -2.64%, #9999A5 99.92%)
+) !default;

@@ -1,0 +1,48 @@
+.ud-float-button{
+  display: inline-block;
+  width: fit-content;
+}
+
+.ud-float-button__normal-btn{
+  display: inline-block;
+  width: fit-content;
+}
+
+.ud-float-button__btn-label{
+  text-wrap: nowrap;
+  &:first-child{
+    margin-right: 0.75rem;
+  }
+  &:last-child{
+    margin-left: 0.75rem;
+  }
+}
+
+
+.ud-float-button__floating-btn{
+  position: fixed;
+  z-index: 2001;
+  width: 60px;
+  min-width: 60px;
+  height: 60px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+  font-size: 20px;
+}
+
+//rwd
+.ud-float-button{
+  display: none;
+}
+@media (min-width:576px) {
+  .ud-float-button{
+    display: inline-block;
+  }
+  .ud-float-button__floating-btn{
+    display: none;
+  }
+}

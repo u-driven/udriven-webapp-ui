@@ -1,0 +1,15 @@
+$tooltip-bg-colors:#D4F0F9;
+$tooltip-bg-colors-dark:#626A6E;
+
+:root{
+  --ud-tooltip-color: #{$tooltip-bg-colors};
+  .ud-tooltip-bg-color{
+    background-color: $tooltip-bg-colors;
+  }
+}
+.dark{
+  --ud-tooltip-color: #{$tooltip-bg-colors-dark};
+  .ud-tooltip-bg-color{
+    background-color: $tooltip-bg-colors-dark;
+  }
+}

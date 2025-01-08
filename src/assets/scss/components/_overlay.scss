@@ -1,0 +1,17 @@
+$overlay-color: rgba(7, 36, 63, var(--ud-overlay-opacity));
+$overlay-color-dark: rgba(115, 115, 115, var(--ud-overlay-opacity));
+
+:root{
+  --ud-overlay-opacity: 0.63;
+  --ud-overlay-color: #{$overlay-color};
+  .ud-overlay-bg{
+    background-color: $overlay-color;
+  }
+}
+.dark{
+  --ud-overlay-opacity: 0.63;
+  --ud-overlay-color: #{$overlay-color-dark};
+  .ud-overlay-bg{
+    background-color: $overlay-color-dark;
+  }
+}

@@ -1,0 +1,122 @@
+:root{
+  --ud-drawer-border-radius: 0.75rem;
+  --ud-drawer-bg: var(--ud-card-color-1);
+  --mobile-padding-bottom: 34px;
+}
+$time: .3s;
+@keyframes fadeout {
+  0%{
+    background-color: var(--ud-overlay-color);
+  }
+  100%{
+    --ud-overlay-opacity: 0;
+    background-color: var(--ud-overlay-color);
+  }
+}
+.ud-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 2000;
+  overflow: hidden;
+  background-color: var(--ud-overlay-color);
+  display: block;
+  &.leave{
+    display: none;
+  }
+  &.active-leave{
+    transition: $time linear;
+    --ud-overlay-opacity: 0;
+  }
+  &.active-show{
+    transition: $time linear;
+    --ud-overlay-opacity: 0.63;
+  }
+}
+
+.ud-overlay-drawer{
+  display: block!important;
+  position: absolute;
+  right: 0;
+  //z-index: 2001;
+  width: 100%;
+  background-color: var(--ud-drawer-bg);
+  overflow: hidden;
+  transform: translateY(0%);
+    //transition: $time;
+  &.is-changing{
+    transition: $time;
+  }
+  &.btt{
+  padding-bottom: var(--mobile-padding-bottom);
+    bottom: 0;
+    border-top-left-radius: var(--ud-drawer-border-radius);
+    border-top-right-radius: var(--ud-drawer-border-radius);
+    &.close{
+      transform: translateY(100%)!important;
+    }
+  }
+  &.ttb{
+    top: 0;
+    border-bottom-left-radius: var(--ud-drawer-border-radius);
+    border-bottom-right-radius: var(--ud-drawer-border-radius);
+    &.close{
+      transform: translateY(-100%)!important;
+      transition: $time;
+    }
+  }
+}
+
+.ud-overlay-drawer_container, .ud-overlay-drawer_content{
+  @include layout-content;
+}
+//.ud-overlay-drawer_content{
+//  padding-top: 0.75rem;
+//}
+
+.ud-overlay-drawer_header-dragbar{
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  .drag-trigger{
+    background-color: rgba(var(--ud-color-gray-500-rgb), 0.5);
+    border-radius: 20px;
+    width: 120px;
+    height: 6px;
+  }
+  .drag-zone{
+    position: absolute;
+    width: 100%;
+    height: 36px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+}
+.ud-overlay-drawer_header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--ud-line-color-1);
+  height: 50px;
+  color: var(--ud-text-color-1);
+  .back-btn{
+    min-width: 10px;
+  }
+}
+.ud-overlay-drawer_header-title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: auto;
+}
+.ud-overlay-drawer_footer{
+  padding: 0 1rem;
+}

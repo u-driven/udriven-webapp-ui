@@ -1,0 +1,275 @@
+$button-blue:(
+        disabled:#D4F0F9,
+        normal: #29BFED,
+        hover:#24ABD5,
+        active:#2098BD
+);
+$button-gray:(
+        disabled:#DBDBDB,
+        normal: #737373,
+        hover:#555459,
+        active:#3D3C40
+);
+$button-red:(
+        disabled:#FFE4DC,
+        normal: #FF3D00,
+        hover:#B02A00,
+        active:#872100
+);
+$dark-button-blue:(
+        disabled:#626A6E,
+        normal: #29BFED,
+        hover:#29A2C6,
+        active:#247E9A
+);
+$dark-button-gray:(
+        disabled:#585763,
+        normal: #747286,
+        hover:#817F8E,
+        active:#9999A5
+);
+$dark-button-red:(
+        disabled:#6A483F,
+        normal: #FF454B,
+        hover:#F67361,
+        active:#E68E82
+);
+
+button{
+  word-wrap: break-word;
+  &:disabled{
+    cursor: not-allowed;
+  }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.ud-button{
+  --ud-button-icon-width: 22px;
+  --ud-button-icon-margin: 4px;
+  --ud-button-minwidth:101px;
+  --ud-button-height:38px;
+  --ud-button-padding:9.5px 16px;
+  --ud-button-padding-with-prefix:9.5px 16px 9.5px 8px;
+  --ud-button-padding-with-suffix:9.5px 8px 9.5px 16px;
+}
+.ud-button {
+  font-size: 16px;
+  font-weight: 500;
+  padding: var(--ud-button-padding);
+  mud-width: var(--ud-button-minwidth);
+  height: var(--ud-button-height);
+  border-radius: 6px;
+  color: var(--ud-button-normal-text);
+  background-color: var(--ud-button-normal-bg);
+  border: 1px solid var(--ud-button-normal-border);
+  line-height: 1.2;
+  cursor: pointer;
+  &:hover {
+    color: var(--ud-button-hover-text);
+    background-color: var(--ud-button-hover-bg);
+    border: 1px solid var(--ud-button-hover-border);
+  }
+  &:active {
+    color: var(--ud-button-active-text);
+    background-color: var(--ud-button-active-bg);
+    border: 1px solid var(--ud-button-active-border);
+  }
+  &:disabled {
+    color: var(--ud-button-disabled-text);
+    background-color: var(--ud-button-disabled-bg);
+    border: 1px solid var(--ud-button-disabled-border);
+  }
+  .rotate-icon {
+    animation: spin 1s linear infinite;
+    margud-right: .5rem;
+  }
+}
+.ud-button__wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-wrap: nowrap;
+}
+
+.ud-button__prefix{
+  margud-right: var(--ud-button-icon-margin);
+  width: var(--ud-button-icon-width);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.ud-button__loading-icon{
+  display: flex;
+  align-items: center;
+  animation: rotate 2s linear infinite;
+
+}
+.ud-button__suffix{
+  margud-left: var(--ud-button-icon-margin);
+  width: var(--ud-button-icon-width);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ud-button{
+  &.ud-button--with-prefix{
+    padding: var(--ud-button-padding-with-prefix);
+  }
+  &.ud-button--with-suffix{
+    padding: var(--ud-button-padding-with-suffix);
+  }
+}
+
+.ud-button.is-plain {
+  background-color: transparent;
+  &:hover {
+    color: var(--ud-button-hover-text);
+    background-color: var(--ud-button-hover-bg);
+  }
+  &:active {
+    color: var(--ud-button-active-text);
+    background-color: var(--ud-button-active-bg);
+  }
+  &:disabled {
+    color: var(--ud-button-disabled-text);
+    background-color: var(--ud-button-disabled-bg);
+    border: 1px solid var(--ud-button-disabled-border);
+  }
+}
+
+.ud-button.is-link{
+  background-color: transparent;
+  border: none;
+  &:hover {
+    color: var(--ud-button-hover-text);
+    background-color: transparent;
+    border: none;
+  }
+  &:active {
+    color: var(--ud-button-active-text);
+    background-color: transparent;
+    border: none;
+  }
+  &:disabled {
+    color: var(--ud-button-disabled-text);
+    background-color: transparent;
+    border: none;
+  }
+}
+
+/* 配色 */
+@mixin generate-button-colors($color-maps, $color-key){
+
+  .ud-button.ud-button--#{$color-key} {
+    --ud-button-normal-text: white;
+    --ud-button-hover-text: white;
+    --ud-button-active-text: white;
+    --ud-button-disabled-text: rgba(255,255,255,0.7);
+    @each $key, $color in $color-maps {
+      --ud-button-#{$key}-bg: #{$color};
+      --ud-button-#{$key}-border: #{$color};
+    }
+    &.is-plain{
+      @each $key, $color in $color-maps {
+        --ud-button-#{$key}-border: #{$color};
+        @if($color-key == 'gray' and $key != disabled){
+          --ud-button-#{$key}-text: var(--ud-text-color-1);
+        }@else{
+          --ud-button-#{$key}-text: #{$color};
+        }
+        @if($key == hover){
+          --ud-button-#{$key}-bg: rgba(#{hex-to-rgb($color)}, 0.1);
+        }@else if($key == active){
+          --ud-button-#{$key}-bg: rgba(#{hex-to-rgb($color)}, 0.3);
+        }@else {
+          --ud-button-#{$key}-bg: transparent;
+        }
+      }
+    }
+    &.is-link{
+      @each $key, $color in $color-maps {
+        @if($color-key == 'gray' and $key != disabled){
+          --ud-button-#{$key}-text: var(--ud-text-color-1);
+        }@else{
+          --ud-button-#{$key}-text: #{$color};
+        }
+        --ud-button-#{$key}-border: transparent ;
+        --ud-button-#{$key}-bg: transparent;
+      }
+    }
+  }
+}
+:root{
+  @each $key, $color in $button-blue{
+    --ud-button-blue-#{$key}: #{$color};
+  }
+  @each $key, $color in $button-red{
+    --ud-button-red-#{$key}: #{$color};
+  }
+  @each $key, $color in $button-gray{
+    --ud-button-gray-#{$key}: #{$color};
+  }
+}
+@include generate-button-colors($button-blue, 'blue');
+@include generate-button-colors($button-gray, 'gray');
+@include generate-button-colors($button-red, 'red');
+
+.dark{
+  @include generate-button-colors($dark-button-blue, 'blue');
+  @include generate-button-colors($dark-button-gray, 'gray');
+  @include generate-button-colors($dark-button-red, 'red');
+    @each $key, $color in $dark-button-blue{
+      --ud-button-blue-#{$key}: #{$color};
+    }
+    @each $key, $color in $dark-button-red{
+      --ud-button-red-#{$key}: #{$color};
+    }
+    @each $key, $color in $dark-button-gray{
+      --ud-button-gray-#{$key}: #{$color};
+    }
+}
+
+.ud-button {
+  margud-right: 12px;
+}
+
+/* 移除最后一个按钮的右边距 */
+.ud-button:last-child {
+  margud-right: 0;
+}
+
+//size
+.ud-button{
+  &.ud-button--large{
+    --ud-button-height: 46px;
+    --ud-button-minwidth: 124px;
+    --ud-button-padding: 12px 24px;
+    --ud-button-padding-with-prefix: 12px 24px 12px 16px;
+    --ud-button-padding-with-suffix: 12px 16px 12px 24px;
+    font-size: 18px;
+  }
+  &.is-button--small{
+    --ud-button-height: 30px;
+    --ud-button-minwidth: 80px;
+    --ud-button-padding: 6.5px 12px;
+    --ud-button-padding-with-prefix: 6.5px 12px 6.5px 6px;
+    --ud-button-padding-with-suffix: 6.5px 6px 6.5px 12px;
+    --ud-button-icon-margin: 0px;
+    font-size: 14px;
+  }
+}
+
+
+
+

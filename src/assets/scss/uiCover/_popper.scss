@@ -1,0 +1,16 @@
+.el-popper.is-light {
+  background: var(--ud-card-color-1);
+  border: 1px solid var(--ud-line-color-2);
+}
+
+.el-popper.is-light .el-popper__arrow::before {
+  border: 1px solid var(--ud-line-color-2);
+  background: var(--ud-card-color-1);
+  right: 0
+}
+
+
+.el-popover.el-popper {
+  color: var(--ud-text-color-1);
+  border-radius: 6px;
+}

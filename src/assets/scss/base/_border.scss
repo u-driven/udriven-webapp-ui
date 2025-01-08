@@ -1,0 +1,116 @@
+@import "colors/variables";
+@import "status/variables";
+@import "gradient/variables";
+@import "opacity/variables";
+
+$line-width: (1, 2, 3, 4, 5);
+$line-colors:(
+        1:#9C9C9C,
+        2:#DBDBDB,
+);
+$line-colors-dark:(
+        1:#676668,
+        2:#585859,
+);
+
+@mixin generate-line-colors($color-map, $color-name) {
+  @each $key, $color in $color-map {
+    .ud-line-#{$color-name}-#{$key} {
+      --ud-line-width: 1px;
+      border: var(--ud-line-width) solid $color !important;
+    }
+    .ud-line-b-#{$color-name}-#{$key} {
+      --ud-line-width: 1px;
+      border-bottom: var(--ud-line-width) solid $color !important;
+    }
+    .ud-line-t-#{$color-name}-#{$key} {
+      --ud-line-width: 1px;
+      border-top: var(--ud-line-width) solid $color !important;
+    }
+    .ud-line-e-#{$color-name}-#{$key} {
+      --ud-line-width: 1px;
+      border-right: var(--ud-line-width) solid $color !important;
+    }
+    .ud-line-s-#{$color-name}-#{$key} {
+      --ud-line-width: 1px;
+      border-left: var(--ud-line-width) solid $color !important;
+    }
+  }
+}
+:root {
+  /* Color level */
+  //@include generate-bg-colors($gray-colors, 'gray');
+  //@include generate-bg-colors($blue-colors, 'blue');
+  //@include generate-bg-colors($deep-blue-colors, 'deep-blue');
+  /* Status */
+  @include generate-line-colors($good-colors, 'good');
+  @include generate-line-colors($warning-colors, 'warning');
+  @include generate-line-colors($error-colors, 'error');
+  @include generate-line-colors($unknown-colors, 'unknown');
+  @include generate-line-colors($ignore-colors, 'ignore');
+  @include generate-line-colors($oob-colors, 'am');
+  @each $name, $value in $line-colors{
+    --ud-line-color-#{$name}: #{$value}
+  }
+}
+
+@each $name, $value in $line-colors {
+  .ud-line-#{$name} {
+    --ud-line-width: 1px;
+    border: var(--ud-line-width) solid $value !important;
+  }
+  .ud-line-b-#{$name} {
+    --ud-line-width: 1px;
+    border-bottom: var(--ud-line-width) solid $value !important;
+  }
+  .ud-line-e-#{$name} {
+    --ud-line-width: 1px;
+    border-right: var(--ud-line-width) solid $value !important;
+  }
+  .ud-line-s-#{$name} {
+    --ud-line-width: 1px;
+    border-left: var(--ud-line-width) solid $value !important;
+  }
+  .ud-line-t-#{$name} {
+    --ud-line-width: 1px;
+    border-top: var(--ud-line-width) solid $value !important;
+  }
+}
+
+.dark{
+  @include generate-line-colors($dark-good-colors, 'good');
+  @include generate-line-colors($dark-warning-colors, 'warning');
+  @include generate-line-colors($dark-error-colors, 'error');
+  @include generate-line-colors($dark-unknown-colors, 'unknown');
+  @include generate-line-colors($dark-ignore-colors, 'ignore');
+  @include generate-line-colors($dark-oob-colors, 'am');
+
+  @each $name, $value in $line-colors-dark{
+    --ud-line-color-#{$name}: #{$value};
+    .ud-line-#{$name} {
+      --ud-line-width: 1px;
+      border: var(--ud-line-width) solid $value !important;
+    }
+    .ud-line-b-#{$name} {
+      --ud-line-width: 1px;
+      border-bottom: var(--ud-line-width) solid $value !important;
+    }
+    .ud-line-e-#{$name} {
+      --ud-line-width: 1px;
+      border-right: var(--ud-line-width) solid $value !important;
+    }
+    .ud-line-s-#{$name} {
+      --ud-line-width: 1px;
+      border-left: var(--ud-line-width) solid $value !important;
+    }
+    .ud-line-t-#{$name} {
+      --ud-line-width: 1px;
+      border-top: var(--ud-line-width) solid $value !important;
+    }
+  }
+}
+@each $name in $line-width {
+  .ud-line-width-#{$name} {
+    --ud-line-width: #{$name}px !important;
+  }
+}

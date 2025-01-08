@@ -1,0 +1,28 @@
+@import "../base/colors/variables";
+:root {
+  --ud-tag-bg: #{$udriven-gray-200};
+  --ud-tag-active-bg:  #{$udriven-blue-300};
+  --ud-tag-text:  #{$udriven-gray-500};
+  --ud-tag-text-active: #{$udriven-blue-900};
+}
+.dark{
+  --ud-tag-bg: #{$udriven-dark-gray-300};
+  --ud-tag-active-bg:  #{$udriven-dark-blue-600};
+  --ud-tag-text: #{$udriven-dark-gray-800};
+  --ud-tag-text-active: #{$udriven-gray-100};
+}
+.ud-tag-item {
+  padding: 4px 8px;
+  background-color: var(--ud-tag-bg);
+  color: var(--ud-tag-text) !important;
+  border-radius: 0.25rem;
+  &.is-active{
+    background-color: var(--ud-tag-active-bg);
+    color: var(--ud-tag-text-active) !important;
+
+  }
+  &.ud-tag-item--pill{
+    padding: 4px 16px;
+    border-radius: 100px;
+  }
+}

@@ -1,0 +1,59 @@
+@import "../base/colors/variables";
+.ud-time{
+  --ud-time-select-view-border-color: var(--ud-line-color-1);
+  --ud-time-select-active-text-color: var(--ud-color-gray-1000);
+  height: 300px;
+  display: flex;
+  position: relative;
+  .el-scrollbar{
+    flex: 1 1 100%;
+  }
+  .el-scrollbar__bar{
+    display: none!important;
+  }
+  ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 130px 0;
+  }
+  li{
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+      color: var(--ud-text-color-placeholder)
+    }
+    &:hover{
+      cursor: pointer;
+    }
+    &.is-active{
+      span{
+        color: var(--ud-time-select-active-text-color);
+        font-weight: 900;
+      }
+      &:hover{
+        cursor: default;
+        background: transparent;
+      }
+    }
+  }
+
+}
+.ud-time__viewer{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 90%;
+  height: 40px;
+  border-top: 1px solid var(--ud-time-select-view-border-color);
+  border-bottom: 1px solid var(--ud-time-select-view-border-color);
+}

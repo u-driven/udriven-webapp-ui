@@ -1,0 +1,59 @@
+$card-bg-colors:(
+        1:#FFFFFF,
+        2:#F5F7FA,
+        3:#D7E8ED,
+        4:#FBFBFB
+);
+$card-bg-colors-dark:(
+        1:#3D3C40,
+        2:#49484D,
+        3:#4E565A,
+        4:#403F43
+);
+:root {
+  @each $key, $value in $card-bg-colors {
+    --ud-card-color-#{$key}: #{$value};
+    .ud-card-bg-#{$key}{
+      --ud-bg-opacity: 1;
+      background-color: $value !important;
+    }
+  }
+}
+.dark{
+  @each $key, $value in $card-bg-colors-dark {
+    --ud-card-color-#{$key}: #{$value};
+    .ud-card-bg-#{$key}{
+      --ud-bg-opacity: 1;
+      background-color: $value !important;
+    }
+  }
+}
+
+//component css
+
+.ud-card {
+  border-radius: 7px;
+  padding: 1rem;
+  overflow: hidden;
+  &.with-shadow{
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+  }
+  &.with-border {
+    background-color: transparent;
+    box-shadow: none;
+    border:1px solid var(--ud-line-color-1);
+  }
+  &.ud-rwd-card {
+    border-radius: 12px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: var(--ud-card-color-1);
+    border: none !important;
+  }
+}
+
+@media (max-width: #{map-get($breakpoints, sm)}) {
+  .ud-rwd-card {
+    border-radius: 0px !important;
+    box-shadow: none !important;
+  }
+}

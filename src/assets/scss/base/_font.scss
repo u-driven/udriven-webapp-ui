@@ -1,0 +1,15 @@
+$font: (8,10, 11, 12, 13, 14,16, 18, 20, 22, 24, 26,28, 30, 35,40,50,60);
+@each $key, $value in $font {
+  .ud-font-#{$key} {
+    font-size: $key * 1px !important;
+  }
+}
+
+.ud-text-hidden {
+  text-wrap: nowrap;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ud-fw-bold{
+  font-weight: bold;
+}

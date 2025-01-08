@@ -1,0 +1,15 @@
+$dialog-bg-colors:#FFFFFF;
+$dialog-bg-colors-dark:#3D3C40;
+
+:root{
+  --ud-dialog-color: #{$dialog-bg-colors};
+  .ud-dialog-bg-color{
+    background-color: $dialog-bg-colors;
+  }
+}
+.dark{
+  --ud-dialog-color: #{$dialog-bg-colors-dark};
+  .ud-dialog-bg-color{
+    background-color: $dialog-bg-colors-dark;
+  }
+}

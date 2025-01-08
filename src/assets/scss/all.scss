@@ -1,0 +1,136 @@
+@import 'reset';
+
+$breakpoints:(
+        "xs": "0px",
+        "sm": "576px",
+        "md": "768px",
+        "lg": "992px",
+        "xl": "1200px",
+        "xxl": "1400px",
+);
+
+//@import "functions/functions";
+@import '@u-driven/plugin-bootstrap-grid/src/scss/_functions';
+@import '_variables';
+@import '@u-driven/plugin-bootstrap-grid/src/scss/all';
+@import "mixin";
+// font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@600&display=swap');
+
+//base
+@import 'base/colors/color';
+@import 'base/status/status';
+@import 'base/background';
+@import 'base/text';
+@import 'base/border';
+@import 'base/font';
+@import 'base/borderRadius';
+
+
+//layout
+@import 'layout/layout';
+
+//ui cover
+
+@import 'elementPlus.css';
+:root{
+  --el-color-primary: var(--ud-color-blue-700);
+}
+@import "components/overlay";
+@import "components/dialog";
+@import "uiCover/overlay";
+@import "uiCover/dialog";
+@import "uiCover/drawer";
+@import "uiCover/checkbox";
+@import "uiCover/input";
+@import "uiCover/select";
+@import "uiCover/popper";
+@import "uiCover/dropdown";
+@import "components/tooltip";
+@import "uiCover/tooltip";
+@import 'uiCover/splitpanes';
+@import 'uiCover/_skeleton.css';
+@import 'uiCover/nprogress';
+@import "uiCover/tree";
+@import "uiCover/radio";
+
+// components
+@import 'components/button';
+@import 'components/floatButton';
+@import 'components/refresh';
+@import 'components/card';
+@import 'components/calendar';
+@import 'components/time';
+@import 'components/overlayDrawer';
+@import 'components/subpage';
+@import 'components/datePicker';
+@import 'components/timePicker';
+@import 'components/vTable';
+@import 'components/columnController';
+@import 'components/filter';
+@import 'components/status';
+@import 'components/tag';
+//@import 'components/popover';
+
+body{
+  font-family: "Open Sans", 'Noto Sans TC','Noto Sans SC', 'IBM Plex Sans JP', sans-serif;
+}
+
+
+::placeholder {
+  color: var(--ud-text-color-placeholder);
+  opacity: 1;
+}
+
+a{
+  text-decoration:none !important;
+}
+[class^="in-"], [class*=" in-"] {
+  *{
+    box-sizing: border-box;
+  }
+}
+// 自定義scroll bars
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+
+  background-color: rgba(40, 40, 40, 0.35);
+}
+.dark{
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(185, 185, 185, 0.35);
+  }
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: none;
+}
+
+:focus-visible {
+  outline: none !important;
+}
+:focus {
+  outline: none !important;
+}
+
+@media (max-width: #{map-get($breakpoints, sm)}) {
+  .el-scrollbar__bar.is-horizontal{
+    display: none !important;
+  }
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+}

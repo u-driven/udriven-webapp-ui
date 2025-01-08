@@ -1,0 +1,38 @@
+@use "../../functions/functions" as function;
+@import "variables";
+
+// 輸出隨著主題變化顏色
+@mixin generate-colors($color-map, $color-name) {
+  @each $key, $color in $color-map {
+    --ud-color-#{$color-name}-#{$key}: #{$color};
+    --ud-color-#{$color-name}-#{$key}-rgb: #{function.hex-to-rgb($color)};
+  }
+  --#{$color-name}-scale-length: #{function.custom-map($color-map)};
+}
+
+/**********************************************************************
+ --ud-color-{type}-{num} (e.g. var(--ud-color-gray-400))會隨著主題變化，常常line-style
+ --ud-color-{type}-{num}-rgb (e.g. var(--ud-color-gray-400-rgb)):會隨著主題變化，常常line-style rgba
+ ud-bg-{type}-{num} (e.g. .ud-bg-gray-400):會隨著主題變化
+ ud-text-{type}-{num} (e.g. .ud-text-gray-400):會隨著主題變化
+ *********************************************************************/
+
+//@include generate-colors($gr-primary-colors, 'grblue');
+//@include generate-colors($gr-teal-colors, 'grteal');
+
+.dark {
+  color-scheme: light;
+  @include generate-colors($dark-gray-colors, 'gray');
+  @include generate-colors($dark-blue-colors, 'blue');
+  @include generate-colors($dark-deep-blue-colors, 'deep-blue');
+}
+
+// 浅色主题
+:root {
+  color-scheme: light;
+  @include generate-colors($gray-colors, 'gray');
+  @include generate-colors($blue-colors, 'blue');
+  @include generate-colors($deep-blue-colors, 'deep-blue');
+  @include generate-colors($gr-primary-colors, 'grblue');
+  @include generate-colors($gr-teal-colors, 'grteal');
+}

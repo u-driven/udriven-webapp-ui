@@ -1,0 +1,12 @@
+//elementPlus css cover
+
+.el-popper.is-dark[role=tooltip] {
+  border: none;
+  background: var(--ud-tooltip-color);
+  color:var(--ud-text-color-1);
+  .el-popper__arrow::before {
+    border: none;
+    background: var(--ud-tooltip-color);
+
+  }
+}

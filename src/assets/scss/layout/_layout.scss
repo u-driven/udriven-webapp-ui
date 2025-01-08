@@ -1,0 +1,41 @@
+.layout-content {
+  height: 100%;
+  flex: 100% 1 1;
+  //border: solid 4px red;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  >.el-card__body{
+    height: 100%;
+    flex: 100% 1 1;
+    //border: solid 4px red;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+}
+.layout-content-inline {
+  //border: solid 4px #42b983;
+  height: 100%;
+  flex: 100% 1 1;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.layout-overflow{
+  overflow: auto;
+}
+.layout-elTab{
+  >.el-tabs__content{
+    height: 100%;
+  }
+}
+
+.flex-center{
+  justify-content: center;
+  align-items: center;
+}
+
+
